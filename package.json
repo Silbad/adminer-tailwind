@@ -1,0 +1,24 @@
+{
+	"name": "adminer-tailwind",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"copy": "xcopy .\\dist\\adminer.css \"COPY_PATH\" /Y",
+		"demon": "nodemon --watch ./dist/adminer.css --exec \"pnpm copy\"",
+		"dev": "npx tailwindcss -i ./src/adminer.css -o ./dist/adminer.css --watch",
+		"build": "npx tailwindcss -i ./src/adminer.css -o ./dist/adminer.css --minify",
+		"start": "concurrently \"pnpm demon\" \"pnpm dev\""
+	},
+	"keywords": [],
+	"author": "",
+	"devDependencies": {
+		"@tailwindcss/aspect-ratio": "^0.4.2",
+		"@tailwindcss/forms": "^0.5.3",
+		"@tailwindcss/line-clamp": "^0.4.4",
+		"@tailwindcss/typography": "^0.5.9",
+		"concurrently": "^8.0.1",
+		"nodemon": "^2.0.22",
+		"tailwindcss": "^3.3.1"
+	}
+}

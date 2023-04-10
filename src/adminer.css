@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* layout */
+html, body {
+    @apply h-full relative
+}
+
+body {
+    @apply flex-col flex justify-center items-center w-full bg-gray-50
+}
+
+#content {
+    @apply w-full block sm:w-3/4 lg:w-1/2 2xl:w-2/6 m-0 bg-white px-4 py-8 shadow sm:rounded-lg sm:px-10
+}
+
+body > #menu {
+    @apply w-full block relative p-0 m-0 lg:absolute lg:top-4 lg:left-4 lg:w-auto
+}
+
+body > form {
+    @apply w-full block relative p-0 m-0 lg:absolute lg:top-14 lg:left-4 lg:w-48
+}
+
+#lang {
+    @apply block relative p-0 m-0 mt-8 lg:m-0 w-full text-center lg:text-left
+}
+
+/* title */
+body > #menu h1 {
+    @apply text-center lg:text-left bg-transparent border-0 text-xl p-0 m-0
+}
+
+#content > h2 {
+    @apply bg-transparent text-center border-0 text-2xl p-0 mb-8
+}
+
+/* table */
+#content form > table {
+    @apply w-full
+}
+
+#content form > table th,
+#content form > table td {
+    @apply border-0 bg-transparent hover:bg-transparent py-2
+}
+
+#content form > p {
+    @apply flex flex-col-reverse
+}
+
+#content form > p label {
+    @apply inline-block py-4 select-none cursor-pointer
+}
+
+/* notifications */
+.error {
+    @apply w-full
+}
+
+/* form */
+select[name="auth[driver]"], select[name="lang"] {
+    @apply block rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:outline-none sm:text-sm sm:leading-6
+}
+
+select[name="auth[driver]"] {
+    @apply w-full
+}
+
+select[name="lang"] {
+    @apply w-auto inline lg:inline-block lg:w-full
+}
+
+input[name="auth[server]"], input[name="auth[username]"], input[name="auth[password]"], input[name="auth[db]"], input[name="auth[otp]"] {
+    @apply block w-full rounded-md border-0 px-3 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 focus:outline-none sm:text-sm sm:leading-6;
+}
+
+input[name="auth[permanent]"] {
+    @apply h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-0 mr-4;
+}
+
+input[type="submit"] {
+    @apply flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer;
+}
+
